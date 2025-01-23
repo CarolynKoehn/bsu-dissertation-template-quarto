@@ -10,6 +10,6 @@ contributes:
         - bsu-dissertation.lua
     pdf:
       include-in-header: header.tex
-    html:
-      css: styles.css
+      format-resources:
+        - bsu-cs.cls
 

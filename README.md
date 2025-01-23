@@ -1,12 +1,12 @@
 
-# <%= title %>
+# BSU Dissertation Quarto Template
 
 ## Creating a New Article
 
 To create a new article using this format:
 
 ```bash
-quarto use template CarolynKoehn/bsu-dissertation>
+quarto use template CarolynKoehn/bsu-dissertation
 ```
 
 This will create a new directory with an example document that uses this format.
@@ -16,7 +16,7 @@ This will create a new directory with an example document that uses this format.
 To add this format to an existing document:
 
 ```bash
-quarto add CarolynKoehn/bsu-dissertation>
+quarto add CarolynKoehn/bsu-dissertation
 ```
 
 Then, add the format to your document options:
