@@ -61,7 +61,25 @@ dedication: "dedicated to Wabi-sabi"
 # personal information.
 biosketch: |
   Wabi-sabi Admirer was born admiring Wabi-sabi. Wabi-sabi Admirer has been tinkering with admiration of Wabi-sabi for a long time. Now it is time to be blessed by Wabi-sabi.
-bibliography: bibliography.bib  
+# includeCopyright causes a copyright page to be produced.  It is not
+# required; in fact, a copyright notice is no longer needed to ensure
+# copyright protection.
+includeCopyright: true
+# \maxPage is used to format the page numbers in the table of contents.
+# The actual value is not important: the width of the value given is used
+# as the maximum width of any page number.  The following values are suggested
+#
+# maxPage: 99 for less than 100 pages (this is the default)
+# maxPage: 199 for less than 200 pages
+# maxPage: 999 for less than 1000 pages
+#
+# (If the work is more than 1000 pages, consider cutting it down!)
+# The space has to be wide enough for front matter page numbers, which are
+# miniscule Roman numerals.  This might have to be widened if there are
+# more than 12 front matter pages (which might happen if there is a long
+# list of symbols or list of abbreviations, like this template has).
+maxPage: 199
+bibliography: bibliography.bib
 ---
 
 ## Introduction {#sec-intro}
