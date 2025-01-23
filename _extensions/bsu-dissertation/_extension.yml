@@ -12,4 +12,8 @@ contributes:
       include-in-header: header.tex
       format-resources:
         - bsu-cs.cls
+      template-partials:
+        - "partials/doc-class.tex"
+        - "partials/before-body.tex"
+        - "partials/before-bib.tex"
 
