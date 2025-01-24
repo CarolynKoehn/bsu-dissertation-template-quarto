@@ -61,3 +61,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+## References
+
+T. Kenny, Christopher. 2023. “Creating Quarto Journal Article Templates.” July 1, 2023. https://christopherkenny/posts/2023-07-01-creating-quarto-journal-articles.
+

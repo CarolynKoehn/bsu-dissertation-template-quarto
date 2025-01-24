@@ -1,5 +1,5 @@
 ---
-title: An Ode to Wabi-sabi: Homage to a Great and Wonderful Person
+title: "An Ode to Wabi-sabi: Homage to a Great and Wonderful Person"
 format:
   bsu-dissertation-pdf:
     keep-tex: true  
@@ -83,21 +83,22 @@ bibliography: bibliography.bib
 ## Document class options - used in doc-class.tex
 classoption: dissertation # other option is "project", remove for default (thesis)
 
+# TO-DO: get these to work
 # Optional list of abbreviations
-listAbbreviations:
-  - abbrev: "LOL"
-    full: "Laughing Out Loud"
-  - abbrev: "OMG"
-    full: "Oh My God!"
-  - abbrev: "ROFL"
-    full: "Rolling on the Floor Laughing"
+# listAbbreviations:
+#   - abbrev: "LOL"
+#     full: "Laughing Out Loud"
+#   - abbrev: "OMG"
+#     full: "Oh My God!"
+#   - abbrev: "ROFL"
+#     full: "Rolling on the Floor Laughing"
     
 # Optional list of symbols
-listSymbols:
-  - symb: "$\sqrt{2}$"
-    full: "square root of 2"
-  - symb: "$\lambda$"
-    full: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
+# listSymbols:
+#   - symb: "$\\sqrt{2}$"
+#     full: "square root of 2"
+#   - symb: "$\\lambda$"
+#     full: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
 ---
 
 <!-- Note that judiciously placed comments can serve as landmarks, just as
@@ -206,64 +207,28 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 # The Greatness of Wabi-sabi {ch-wabisabiGreatness}
 
 ## Previous work
-The greatness of Wabi-sabi The Great derives from her early work as documented in
-her books~[@ws:book1,ws:book2].
+The greatness of Wabi-sabi The Great derives from her early work as documented in her books~[@wsbook1, @wsbook2].
 
-\section{What are their names?}
-Please consult the articles by Admirer~\cite{me:paper1} and Admirer, Smith and Doe~\cite{me:paper2}
-for more details. Note that the references are cited by the last names of all authors for three
-authors or less. For more than three authors, ``et al'' can be used.
+## What are their names?
+Please consult the articles by Admirer~[@mepaper1] and Admirer, Smith and Doe~[@mepaper2] for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used.
 
-%! The \label command applies to the most recent heading in the main text,
-%! or the current figure or table.
-%! The \pageref{<tag>} command references the page number of a label.
-Check the References on page~\pageref{references} for an example of how to format the references.
+<!-- %! The \pageref{<tag>} command references the page number of a label. -->
+Check the References on page~\pageref{refs} for an example of how to format the references.
 
-\section{The code of Wabi-sabi}
+## The code of Wabi-sabi
 
-% \textbf{} sets text in bold face.  It is useful in headings, but
+<!-- % **text** sets text in bold face.  It is useful in headings, but
 % is rarely used in running text.  It is used here to denote literal
-% LaTeX commands, and to illustrate its use.  Normally it is preferable
-% to use \emph{} to emphasize text.
-When showing a program fragment, use the \textbf{verbatim} environment. However, when you wan
-to show an algorithm, use either the \textbf{tabbing} or \textbf{algorithm} environment.
+% LaTeX commands, and to illustrate its use. 
+When showing a program fragment, use the `text` environment. However, when you want
+to show an algorithm, use the $text$ environment. -->
 
-Thesis and dissertation text is normally ``double'' spaced.  It is customary to single-space
-literal code.  Figure~\ref{fig:code} shows a sample Java program.
+Thesis and dissertation text is normally "double spaced."  It is customary to single-space
+literal code.  @fig-code shows a sample Java program.
 
-% The 'figure' environment starts a new figure, which is a type of
-% "floating" element.  That means it goes where LaTeX decides to put it,
-% rather than at the current point in the running text.  Don't be surprised
-% when figures and tables get placed in unexpected places.
-%
-% You can control, to some degree, where floating elements go by setting
-% the optional argument of \begin{figure}.  The options are
-%
-%   h - place the figure at this point, if possible (avoid this)
-%   t - place the figure at the top of a page
-%   b - place the figure at the bottom of a page
-%   p - place the figure on a special page containing only figures and tables
-%
-% The options can be combined, and a '*' can be appended to make LaTeX
-% try harder to match the request.  For example, \begin{figure}[tp*]
-% allows the figure to be placed at the top of the page or on a special
-% page ([tp*] is in fact the default set in "bsu-cs.cls").  Avoid using
-% [h] by itself--it is inflexible and can cause formatting problems.  At
-% the same time, it can be very useful in forcing figure placement.
-% Finessing figure placement is a typesetting task that you just have to get
-% used to, no matter what system you are using.
-%
-% WARNING: when LaTeX has trouble placing floating elements, it sometimes
-%          puts all of them at the very end of the document.  So if your
-%          figures and tables suddenly disappear, check the end of the
-%          document.  Adding more 'p' specifiers can help with this.
+::: {#fig-code fig-pos='t'}
 
-\begin{figure}[t]
-
-\begin{vcode}
-% an alternative to 'singlespace', that also shrinks the
-% typewriter font so that it blends better with the text
-\begin{lstlisting}
+```default
 /**
 Compute x^n using recursive doubling technique. O(lg n) multiplications.
 @param x  The base value, unlimited precision.
@@ -282,105 +247,88 @@ public static BigInteger power(BigInteger x, int n)
     }
     return result;
 }
-\end{lstlisting}
-\end{vcode}
-%\caption{} gives the figure or table a caption, which is normally
-% placed below the figure (but above a table).  The caption is also
-% used as the title of the figure in the list of figures.  An optional
-% argument gives the figure a "short title" for use in the list of
-% figures, which is useful if the caption is long, or includes some
-% extra information.
-\caption[Repeated Squaring Power Method]{Repeated Squaring Power Method. This figure
-also serves as an example of the inclusion of literal code.}
-%
-% WARNING: the labels can get screwed up if the label in a figure is given
-%          before the caption (another one of LaTeX's quirks)
-\label{fig:code}
-\end{figure}
+```
+Repeated Squaring Power Method]{Repeated Squaring Power Method. This figure
+also serves as an example of the inclusion of literal code.
+
+:::
 
 
-\section{Other mysteries of Wabi-sabi}
+## Other mysteries of Wabi-sabi
 
 Here is an itemized list of all the mysteries of Wabi-sabi.
-% The 'itemize' environment is for unordered lists: the items are bulleted
-% rather than numbered.  A different bullet style is used for itemized
-% lists inside itemized lists.
-\begin{itemize}
-\item Mystery 1.
-\item Mystery 2.
-\item Mystery 3.
-\item Mystery 4.
-\end{itemize}
 
-% Tables are like figures, except that they are numbered separately
+- Mystery 1.
+- Mystery 2.
+- Mystery 3.
+- Mystery 4.
+
+<!-- % Tables are like figures, except that they are numbered separately
 % and the caption is placed at the top.  Also there is a separate
-% list of tables in the front matter.
+% list of tables in the front matter. -->
 
 Here is a simple table.
 
-\begin{table}[ht] % 'h' in this case prevents the table from being placed
-                 % too close to the figure
-% By custom, the caption of a table is placed at the top of the table.
-\caption{The Approximate Time of Parallelizing Each Code}
-% (The label must follow the caption)
-\label{table4}
-\centering % tables need be horizontally centered
-% The 'tabular' environment can be used to format tables.  Unfortunately
-% it is one of the more cumbersome LaTeX constructs.
-\begin{tabular}{|c|c|c|c|}\hline \hline
-Parallel library/language  &WRS Code  &OCS Code  &ICSAMD Code\\ \hline
-MPI                        &20 hours  &2 weeks   &1 month\\ \hline
-HPF                        &3 hours   &1 1/2 weeks  &1 month\\ \hline
-\end{tabular}
-\end{table}
+| Parallel library/language | WRS Code | OCS Code  | ICSAMD Code |
+|:-------------------------:|:--------:|:---------:|:-----------:|
+| MPI                       | 20 hours | 2 weeks   | 1 month     |
+| HPF                       | 3 hours  |1 1/2 weeks| 1 month     |
+
+: The Approximate Time of Parallelizing Each Code {#tbl-table4}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Chapter: not so great
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-\chapter{The not so great things about Wabi-sabi}
+# The not so great things about Wabi-sabi
 
-\section{Figures}
-Check Figure~\ref{fig:fuzzyImage} for what happens when Wabi-sabi gets compiled. This example
-shows how to include an image (in PDF, JPG or PNG) into a LaTeX document.
+## Figures
 
-\begin{figure}[ht]
-% Code in figures is normally not centered, but graphical figures are
-% (the \centering command works as well as the 'center' environment,
-% because its scope is limited to the figure).
-\begin{center}
-\includegraphics*[width=4.0in,keepaspectratio]{figure}
-\end{center}
-\caption{How to Correct Errors in a Fuzzy Image}
-\label{fig:fuzzyImage}
-\end{figure}
+Check @fig-fuzzyImage for what happens when Wabi-sabi gets compiled. This example shows how to include an image (in PDF, JPG or PNG) into a Quarto document.
 
-\section{Tables}
+![How to Correct Errors in a Fuzzy Image](figs/figure.pdf){#fig-fuzzyImage fig-pos='ht' width=4.0in keepaspectratio}
+<!-- Figures are center aligned by default -->
 
-Table~\ref{tbl:CSSSM} shows the formatting and labeling for a table.
+## Tables
 
-\begin{table}[ht]
-\caption{Complexity of Selection and Search in Sorted Matrices}
-\label{tbl:CSSSM}
-\centerline{
-\begin{tabular}{|l|cccc|}
-\hline
-& Sorted $X+Y$ & \multicolumn{2}{c}{Matrix with sorted rows} & Matrix with sorted \\
-&  & \multicolumn{2}{c}{and sorted columns} & columns \\ \cline{2-5}
-& $|X|=|Y|=n$ &  $n \times m$, $m \leq n$ & $n \times n$ & $n \times m$ \\
-\hline
-$k = \Theta(mn)$ or $\Theta(n^2)$ & $\Theta(n)$ & $\Theta(m
-\log (2n/m))$ & $\Theta(n)$ & $\Theta(m \log n)$ \\
-\hline
-\end{tabular}
-}
-\end{table}
+@tbl-CSSSM shows the formatting and labeling for a table. For complicated formats, you can create a grid table at https://www.tablesgenerator.com/text_tables with `Use reStructuredText syntax` selected, or generate an HTML table (https://quarto.org/docs/authoring/tables.html).
 
+::: {#tbl-CSSSM}
+
++:-----------------------------------+:--------------:+:------------------------------------------:+:--------------------:+
+|                                   | Sorted $X+Y$ |          Matrix with sorted rows         | Matrix with sorted |
++-----------------------------------+--------------+---------------------------+--------------+--------------------+
+|                                   |              |            and sorted columns            |       columns      |
++-----------------------------------+--------------+---------------------------+--------------+--------------------+
+|                                   |  $|X|=|Y|=n$ | $n \times m$, $m \leq n$  | $n \times n$ |    $n \times m$    |
++-----------------------------------+--------------+---------------------------+--------------+--------------------+
+| $k = \Theta(mn)$ or $\Theta(n^2)$ |  $\Theta(n)$ |   $\Theta(m\log (2n/m))$  |  $\Theta(n)$ | $\Theta(m \log n)$ |
++-----------------------------------+--------------+---------------------------+--------------+--------------------+
+
+Complexity of Selection and Search in Sorted Matrices
+
+:::
 
 Here are two more examples of tables:
+
+::: {#tbl-CSPV}
+
++----------------------------+---------------------------------------------------+
+| Parameters                 |                   Process Number                  |
++:====+:===:+:==============:+:====:+:====:+:====:+:====:+:=====:+:=====:+:=====:+
+| N   |  M  |                |   1  |   5  |  10  |  15  |   20  |   25  |   30  |
++-----+-----+----------------+------+------+------+------+-------+-------+-------+
+| 128 | 100 | Slow MPI(secs) | 2.11 | 3.91 | 5.78 | 8.26 | 10.91 | 14.17 | 19.47 |
+|     |     +----------------+------+------+------+------+-------+-------+-------+
+|     |     | Fast MPI(secs) | 2.10 | 1.20 | 1.56 | 1.95 |  2.79 |  3.22 |  4.07 |
++-----+-----+----------------+------+------+------+------+-------+-------+-------+
+
+Comparison of Slow MPI Version and the Fast MPI Version
+
+:::
 
 \begin{table}[ht]
 \caption{Comparison of Slow MPI Version and the Fast MPI Version}
@@ -396,7 +344,11 @@ N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
 }
 \end{table}
 
+You can also use LaTeX tables.
 
+::: {#tbl-SPWC}
+
+```{=latex}
 \begin{table}[h]
 \caption{The Speedup of the MPI WRS Code and the HPF WRS Code}
 \label{tbl:SPWC}
@@ -416,20 +368,51 @@ N &M & &1 &10 &20 &30 &40 &50 &60\\ \hline
 \end{tabular}
 }
 \end{table}
+```
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The Speedup of the MPI WRS Code and the HPF WRS Code
+
+:::
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Chapter: Conclusions
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-\chapter{Conclusions}
+# Conclusions
 
 
-\section{What have we done so far?}
+## What have we done so far?
 
-\section{Future directions}
+## Future directions
 The coming revolution in Wabi-sabi-lets offers many opportunities for further
 research.
 
+# References
 
+::: {#refs}
+:::
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Appendix
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+<!-- % Use the \appendix command (only once) to start the appendix (or appendices) -->
+
+\appendix
+
+<!-- % After \appendix has executed, the # command creates an appendix.
+% Appendices are numbered by "A", "B", etc. -->
+
+# Timing Measurements {#app-Timing}
+
+Here is Appendix A. See Appendix~@app-Setup for the experimental setup.
+
+# Experimental Setup {#app-Setup}
+
+Here is Appendix~@app-Setup.
+
+\finish

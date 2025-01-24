@@ -1,1 +1,101 @@
-% TODO: Add custom LaTeX header directives here
+% Uncomment the following to produce a twoside document, suitable for printing.
+%\usepackage[inner=1.5in,outer=1in,letterpaper,twoside]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Packages
+
+% The 'graphicx' package is quite extensive; the main purpose here is
+% the includion of PostScript graphics.  The 'dvips' option makes it work
+% better with 'dvips' (which is what is often used under Linux)
+%\usepackage[dvips]{graphicx}
+% Comment the above line and uncomment below to use pdflatex
+\usepackage{graphicx}
+% Then the figures should be in pdf, jpg or png format.
+
+% Others to consider
+\usepackage{listings}
+\usepackage{color}
+\definecolor{listinggray}{gray}{0.95}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{maroon}{rgb}{0.5,0.00,0.0}
+
+
+\lstdefinestyle{javanum}{
+  backgroundcolor=\color{listinggray},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize\ttfamily, % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=none,                   % sets the caption-position to bottom
+  aboveskip=\smallskipamount,
+  belowskip=\smallskipamount,     % default is \medskipamount
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                      % adds a frame around the code (none, single)
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{maroon},       % keyword style
+  language=Java,                   % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=4,                       % sets default tabsize to 2 spaces
+%   title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\lstdefinestyle{javanonum}{
+  backgroundcolor=\color{listinggray},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize\ttfamily, % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=none,                 % sets the caption-position to bottom
+  aboveskip=\smallskipamount,
+  belowskip=\smallskipamount,      % default is \medskipamount
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=none,                      % adds a frame around the code (none, single)
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{maroon},       % keyword style
+  language=Java,                   % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=4,                       % sets default tabsize to 4 spaces
+% title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\lstset{style=javanonum}
+
+
+% The 'subfigure' package does a nice job handling and labelling subfigures
+%\usepackage{subfig}
+
+% If you want to use PostScript fonts (or the Nimbus knockoffs) try
+%\usepackage{mathptmx}
+%\usepackage[scaled=0.92]{helvet}
+
+% The 'citesort' package puts mutliple citation numbers in order
+%\usepackage{citesort}
+
+
+% Generate intra-document links and also allows url and href commands for
+% to generate embedded links in the document.
+\usepackage{hyperref}
+\hypersetup{
+ 	colorlinks=true,
+ 	allcolors=blue,
+}
