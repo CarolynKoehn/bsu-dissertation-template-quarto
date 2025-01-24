@@ -653,12 +653,12 @@ sample Java program.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-
+\NormalTok{/**}
 \NormalTok{Compute x\^{}n using recursive doubling technique. O(lg n) multiplications.}
 \NormalTok{@param x  The base value, unlimited precision.}
 \NormalTok{@param n  The exponent, an integer.}
 \NormalTok{@return   The computed power as a BigInteger}
-
+\NormalTok{*/}
 \NormalTok{public static BigInteger power(BigInteger x, int n)}
 \NormalTok{\{}
 \NormalTok{    BigInteger temp = x;}
@@ -727,8 +727,7 @@ Check \textbf{?@fig-fuzzyImage} for what happens when Wabi-sabi gets
 compiled. This example shows how to include an image (in PDF, JPG or
 PNG) into a Quarto document.
 
-\includegraphics{figs/figure.pdf}\{\#fig-fuzzyImage fig-pos=`ht'
-width=4.0in keepaspectratio\}
+\includegraphics[width=4in,height=\textheight]{figs/figure.pdf}
 
 \subsection{Tables}\label{tables}
 
