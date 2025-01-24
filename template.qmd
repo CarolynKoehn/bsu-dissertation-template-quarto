@@ -15,14 +15,19 @@ graduationYear: "2022"
 # Advisor (chair)
 # Use full name, with surname last, without any titles
 advisor: "Wabi-sabi The Great, Ph.D."
+chair: false # switch to true if advisor should be given the title "Chair" instead
 # Committee members: committeeA is listed first after the advisor,
 # committeeB second, etc.
 committeeA: "Aaa, Ph.D."
+committeeAtitle: false # can be changed to a replacement for the default "Committee Member" position
 committeeB: "Bbb, Ph.D."
+committeeBtitle: false
 # Masters or PhD committees normally have three members, but in case there is
 # a need for more, use these commands
 # committeeC: "ccc"
+# committeeCtitle: false
 # committeeD: "ddd"
+# committeeDtitle: false
 # Full name of the degree
 degree: "Doctor of Philosophy"
 # Full name of major
@@ -45,8 +50,8 @@ abstract: |
 # too long.  Acknowledgments are often written in the third person, but
 # it is one place (the only place) in the document where first-person
 # references (i.e., the use of "I") can be acceptable.
-acknowledgements: | 
-  Please include your acknowledgments here, set in a single paragraph. Please do not include any acknowledgments in the Supporting Information, or anywhere else in the manuscript.
+acknowledgments: |
+  The author wishes to express gratitude to Wabi-sabi.  This work would have been partially supported by some particular grant, if there was one.
 # The work can be "dedicated" to someone, typically family members or
 # someone similar.  Unlike acknowledgments, which are included in almost
 # every thesis or dissertation or project, many students omit the dedication.
@@ -99,6 +104,8 @@ classoption: dissertation # other option is "project", remove for default (thesi
 #     full: "square root of 2"
 #   - symb: "$\\lambda$"
 #     full: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
+
+indent: true
 ---
 
 <!-- Note that judiciously placed comments can serve as landmarks, just as
@@ -110,10 +117,10 @@ classoption: dissertation # other option is "project", remove for default (thesi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-# Introduction {ch-intro}
+# Introduction {#sec-intro}
 
 <!-- % The {<tag>} command allows the chapter to be referenced elsewhere
-% in the text by the <tag>: '@ch-intro' gets formatted as
+% in the text by the <tag>: '@sec-intro' gets formatted as
 % "Chapter 1" or whatever number this chapter gets assigned.  It usually
 % requires a second 'latex' execution to get the labels right.  (The labels
 % are stored in the ".aux" file, and that gets updated each time latex runs.) I am not sure about the behavior in Quarto yet.
@@ -123,7 +130,6 @@ classoption: dissertation # other option is "project", remove for default (thesi
 % but it's typical to include a hyphen-terminated prefix to indicate what
 % is being labeled, e.g. 'fig-' and 'tbl-' are required, see the Quarto crossrefs webpage for more info
 %
-%   ch-<name>  for chapters
 %   sec-<name> for sections
 %   tbl-<name> for tables
 %   fig-<name> for figures
@@ -137,16 +143,10 @@ This is a template that allows you to typeset your dissertation (or thesis or pr
 ### Where are the style class files?
 
 <!-- % [@<tag>] is bibilography citation; <tag> must match a bibliography
-% item label.  It can take multiple, comma-separated, arguments.
+% item label.  It can take multiple, comma-separated, arguments. -->
 
-% The '~' is a "tie", which is an unbreakable space.  That is, it is
-% the same a a space but TeX won't break the line there.  Ties are used
-% between text and a reference or citation, to avoid something like Figure
-% 1, which looks weird. -->
-
-Please consult the guide from Graduate College~[@guide] for resolving any style issues
-that are not addressed by the style class files that are provided along with this document. The
-files associated with this style can be found on the GitHub website~[@mainrepo].
+Please consult the guide from Graduate College [@guide] for resolving any style issues
+that are not addressed by the style class files that are provided along with this document. The files associated with this style can be found on the GitHub website [@mainrepo].
 
 <!-- % `text` changes to "typewriter" (monospaced) font, which is typically
 % used for literal code or filenames.
@@ -193,10 +193,8 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff st
 We need lots more stuff to get a full page of text, without a chapter or section heading,
 so we can check all the margins.
 
-stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
-stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
+stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -204,16 +202,16 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-# The Greatness of Wabi-sabi {ch-wabisabiGreatness}
+# The Greatness of Wabi-sabi {#sec-wabisabiGreatness}
 
 ## Previous work
-The greatness of Wabi-sabi The Great derives from her early work as documented in her books~[@wsbook1, @wsbook2].
+The greatness of Wabi-sabi The Great derives from her early work as documented in her books [@wsbook1, @wsbook2].
 
 ## What are their names?
-Please consult the articles by Admirer~[@mepaper1] and Admirer, Smith and Doe~[@mepaper2] for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used.
+Please consult the articles by Admirer [@mepaper1] and Admirer, Smith and Doe [@mepaper2] for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used.
 
 <!-- %! The \pageref{<tag>} command references the page number of a label. -->
-Check the References on page~\pageref{refs} for an example of how to format the references.
+Check the References on page \pageref{refs} for an example of how to format the references.
 
 ## The code of Wabi-sabi
 
@@ -226,7 +224,7 @@ to show an algorithm, use the $text$ environment. -->
 Thesis and dissertation text is normally "double spaced."  It is customary to single-space
 literal code.  @fig-code shows a sample Java program.
 
-::: {#fig-code fig-pos='t'}
+::: {#fig-code}
 
 ```default
 /**
@@ -289,7 +287,7 @@ Here is a simple table.
 
 Check @fig-fuzzyImage for what happens when Wabi-sabi gets compiled. This example shows how to include an image (in PDF, JPG or PNG) into a Quarto document.
 
-![How to Correct Errors in a Fuzzy Image](figs/figure.pdf){#fig-fuzzyImage fig-pos='ht' width=4.0in keepaspectratio}
+![How to Correct Errors in a Fuzzy Image](figs/figure.pdf){#fig-fuzzyImage width=4.0in}
 <!-- Figures are center aligned by default -->
 
 ## Tables
@@ -314,7 +312,7 @@ Complexity of Selection and Search in Sorted Matrices
 
 Here are two more examples of tables:
 
-::: {#tbl-CSPV}
+<!-- ::: {#tbl-CSPV}
 
 +----------------------------+---------------------------------------------------+
 | Parameters                 |                   Process Number                  |
@@ -330,23 +328,9 @@ Comparison of Slow MPI Version and the Fast MPI Version
 
 :::
 
-\begin{table}[ht]
-\caption{Comparison of Slow MPI Version and the Fast MPI Version}
-\label{tbl:CSPV}
-\centerline{
-\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
-N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
-128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
-    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
-\end{tabular}
-}
-\end{table}
+You can also use LaTeX tables. -->
 
-You can also use LaTeX tables.
-
-::: {#tbl-SPWC}
+<!-- ::: {#tbl-SPWC}
 
 ```{=latex}
 \begin{table}[h]
@@ -372,7 +356,7 @@ N &M & &1 &10 &20 &30 &40 &50 &60\\ \hline
 
 The Speedup of the MPI WRS Code and the HPF WRS Code
 
-:::
+::: -->
 
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -409,10 +393,10 @@ research.
 
 # Timing Measurements {#app-Timing}
 
-Here is Appendix A. See Appendix~@app-Setup for the experimental setup.
+Here is Appendix A. See Appendix @app-Setup for the experimental setup.
 
 # Experimental Setup {#app-Setup}
 
-Here is Appendix~@app-Setup.
+Here is Appendix @app-Setup.
 
 \finish
