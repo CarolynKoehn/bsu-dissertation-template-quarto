@@ -1,8 +1,6 @@
 ---
-# create new lines in title with '|'
-title: |
-  | An Ode to Wabi-sabi
-  | Homage to a Great and Wonderful Person
+# "titleBreak" is a custom command that breaks the title on the first page but not on other pages
+title: "An Ode to Wabi-sabi:\\titleBreak Homage to a Great and Wonderful Person"
 format:
   bsu-dissertation-pdf:
     keep-tex: true  
@@ -108,6 +106,7 @@ classoption: dissertation # other option is "project", remove for default (thesi
 #   - symb: "$\\lambda$"
 #     full: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
 
+# necessary formatting commands
 indent: true
 ---
 
@@ -120,7 +119,7 @@ indent: true
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
 
-# Introduction {#sec-intro}
+\chapter{Introduction} \label{ch-intro}
 
 <!-- % The {<tag>} command allows the chapter to be referenced elsewhere
 % in the text by the <tag>: '@sec-intro' gets formatted as
@@ -140,10 +139,10 @@ indent: true
 % WARNING: Do not use numbers or special characters such as '_', '$', etc.
 %          in label tags (although '-' is okay). -->
 
-## What is this?
+# What is this?
 This is a template that allows you to typeset your dissertation (or thesis or project report) in the format approved by the Boise State Graduate College. It greatly reduces your typesetting work and helps you produce an aesthetically pleasing and consistent document. The template depends on a style class, titled `bsu-cs.cls` that was specifically designed for Boise State Computer Science students but would also work for students from other departments.
 
-### Where are the style class files?
+## Where are the style class files?
 
 <!-- % [@<tag>] is bibilography citation; <tag> must match a bibliography
 % item label.  It can take multiple, comma-separated, arguments. -->
@@ -181,7 +180,7 @@ The first or second way is recommended, because they involve making a local copy
 file. This assures your document format will not be affected affected by subsequent updates
 to `bsu-cs.cls` (but gives you the option to copy the updated file if you want).
 
-## Get ready for Wabi-sabi {sec-getReady}
+# Get ready for Wabi-sabi {#sec-getReady}
 
 <!-- % The [^1] command creates a footnote -->
 So who is Wabi-sabi? We need a lot of text in here to see what happens when we hit the bottom of
@@ -227,7 +226,7 @@ to show an algorithm, use the $text$ environment. -->
 Thesis and dissertation text is normally "double spaced."  It is customary to single-space
 literal code.  @fig-code shows a sample Java program.
 
-::: {#fig-code}
+::: {#fig-code fig-scap='Repeated Squaring Power Method'}
 
 ```default
 /**
@@ -249,8 +248,7 @@ public static BigInteger power(BigInteger x, int n)
     return result;
 }
 ```
-Repeated Squaring Power Method]{Repeated Squaring Power Method. This figure
-also serves as an example of the inclusion of literal code.
+Repeated Squaring Power Method. This figure also serves as an example of the inclusion of literal code.
 
 :::
 
@@ -291,7 +289,6 @@ Here is a simple table.
 Check @fig-fuzzyImage for what happens when Wabi-sabi gets compiled. This example shows how to include an image (in PDF, JPG or PNG) into a Quarto document.
 
 ![How to Correct Errors in a Fuzzy Image](figs/figure.pdf){#fig-fuzzyImage width=4.0in}
-<!-- Figures are center aligned by default -->
 
 ## Tables
 

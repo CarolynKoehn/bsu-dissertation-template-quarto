@@ -304,7 +304,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
-  pdftitle={An Ode to Wabi-sabi: Homage to a Great and Wonderful Person},
+  pdftitle={An Ode to Wabi-sabi:Homage to a Great and Wonderful Person},
   pdfauthor={Wabi-sabi Admirer},
   colorlinks=true,
   linkcolor={blue},
@@ -322,7 +322,8 @@
 % matter pages.
 
 % Document title
-\title{An Ode to Wabi-sabi: Homage to a Great and Wonderful Person}
+\title{An Ode to Wabi-sabi:\titleBreak Homage to a Great and Wonderful
+Person}
 
 % Author's name (must be exactly what name the Registrar has)
 % normally it is of the form "First Middle Last"
@@ -451,16 +452,10 @@ Now it is time to be blessed by Wabi-sabi.}
 % The (optional) list of symbols goes here
 
 \mainmatter
-%%%\renewcommand*\contentsname{Table of contents}
-%%%{
-%%\hypersetup{linkcolor=}
-%%\setcounter{tocdepth}{3}
-%\tableofcontents
-%}
-%%%%
-\section{Introduction}\label{sec-intro}
 
-\subsection{What is this?}\label{what-is-this}
+\chapter{Introduction} \label{ch-intro}
+
+\section{What is this?}\label{what-is-this}
 
 This is a template that allows you to typeset your dissertation (or
 thesis or project report) in the format approved by the Boise State
@@ -470,7 +465,7 @@ depends on a style class, titled \texttt{bsu-cs.cls} that was
 specifically designed for Boise State Computer Science students but
 would also work for students from other departments.
 
-\subsubsection{Where are the style class
+\subsection{Where are the style class
 files?}\label{where-are-the-style-class-files}
 
 Please consult the guide from Graduate College (Graduate College 2021)
@@ -517,8 +512,7 @@ local copy of the style file. This assures your document format will not
 be affected affected by subsequent updates to \texttt{bsu-cs.cls} (but
 gives you the option to copy the updated file if you want).
 
-\subsection{Get ready for Wabi-sabi
-\{sec-getReady\}}\label{get-ready-for-wabi-sabi-sec-getready}
+\section{Get ready for Wabi-sabi}\label{sec-getReady}
 
 So who is Wabi-sabi? We need a lot of text in here to see what happens
 when we hit the bottom of a page with text and try out things like
@@ -654,7 +648,7 @@ sample Java program.
 
 }
 
-\caption{\label{fig-code}Repeated Squaring Power Method{]}\{Repeated
+\caption[Repeated Squaring Power Method]{\label{fig-code}Repeated
 Squaring Power Method. This figure also serves as an example of the
 inclusion of literal code.}
 
@@ -701,11 +695,21 @@ Wabi-sabi}\label{the-not-so-great-things-about-wabi-sabi}
 
 \subsection{Figures}\label{figures}
 
-Check \textbf{?@fig-fuzzyImage} for what happens when Wabi-sabi gets
+Check Figure~\ref{fig-fuzzyImage} for what happens when Wabi-sabi gets
 compiled. This example shows how to include an image (in PDF, JPG or
 PNG) into a Quarto document.
 
+\begin{figure}
+
+\centering{
+
 \includegraphics[width=4in,height=\textheight]{figs/figure.pdf}
+
+}
+
+\caption{\label{fig-fuzzyImage}How to Correct Errors in a Fuzzy Image}
+
+\end{figure}%
 
 \subsection{Tables}\label{tables}
 
