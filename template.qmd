@@ -1,5 +1,8 @@
 ---
-title: "An Ode to Wabi-sabi: Homage to a Great and Wonderful Person"
+# create new lines in title with '|'
+title: |
+  | An Ode to Wabi-sabi
+  | Homage to a Great and Wonderful Person
 format:
   bsu-dissertation-pdf:
     keep-tex: true  
