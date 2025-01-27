@@ -1,6 +1,8 @@
 
 # BSU Dissertation Quarto Template
 
+Disclaimer: This template is not yet ready for use.
+
 ## Creating a New Article
 
 To create a new article using this format:

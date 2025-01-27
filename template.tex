@@ -27,16 +27,6 @@
   \usepackage[]{microtype}
   \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
@@ -107,7 +97,6 @@
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
-\usepackage{multirow}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -248,7 +237,7 @@
 
 
 % The 'subfigure' package does a nice job handling and labelling subfigures
-%\usepackage{subfig}
+\usepackage{subfig}
 
 % If you want to use PostScript fonts (or the Nimbus knockoffs) try
 %\usepackage{mathptmx}
@@ -325,13 +314,6 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-%% TO-DO: define frontmatter commands %%
-
-\title{An Ode to Wabi-sabi: Homage to a Great and Wonderful Person}
-\author{Wabi-sabi Admirer}
-\date{}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Front Matter Definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -364,7 +346,7 @@
 %
 % causes "Chair" to appear on the approval page (the one with the signatures)
 % in place of "Advisor"
-\advisor{Wabi-sabi The Great, Ph.D.} % also the chair of your committee
+\advisor{Wabi-sabi The Great, Ph.D.}
 
 % Committee members: \committeeA is listed first after the advisor,
 % \committeeB second, etc.  An optional argument is accepted to replace
@@ -374,15 +356,12 @@
 
 % Masters or PhD committees normally have three members, but in case there is
 % a need for more, use these commands
-%\committeeC[Ex-Officio Committee Member]{ccc}
-%\committeeD{ddd}
 
 % Full name of the degree; normally "Master of Science"
 %\degree{Master of Science}
 \degree{Doctor of Philosophy}
 
 % Full name of major
-%\major{Computer Science}
 \major{Computing}
 
 % Major department
@@ -395,14 +374,16 @@
 \departmentChair{Amit Jain}
 
 % Document abstract
-\abstract{ An \emph{abstract} is a brief summary of the document. A typical
-  abstract provides a brief introduction, enough to provide context for the document, explains
-  the purpose of the thesis or dissertation or project, and summarizes the major results and
-  conclusions.  Keep in mind that a casual observer is likely to judge the content of the document
-  by the abstract and title alone.  (There is an old adage: ``in a joke, the punchline comes
-  at the end; in a paper [or thesis], it comes in the abstract.'')  A single concise paragraph
-  usually suffices for the abstract.  If it spills onto a second page, it is probably too long.
-}
+\abstract{An \emph{abstract} is a brief summary of the document. A
+typical abstract provides a brief introduction, enough to provide
+context for the document, explains the purpose of the thesis or
+dissertation or project, and summarizes the major results and
+conclusions. Keep in mind that a casual observer is likely to judge the
+content of the document by the abstract and title alone. (There is an
+old adage: ``in a joke, the punchline comes at the end; in a paper {[}or
+thesis{]}, it comes in the abstract.'') A single concise paragraph
+usually suffices for the abstract. If it spills onto a second page, it
+is probably too long.}
 
 
 % The remaining elements are optional
@@ -437,8 +418,9 @@
 % it is one place (the only place) in the document where first-person
 % references (i.e., the use of "I") can be acceptable.
 \acknowledgments{
-The author wishes to express gratitude to Wabi-sabi.  This work would have been
-partially supported by some particular grant, if there was one.
+The author wishes to express gratitude to Wabi-sabi. This work would
+have been partially supported by some particular grant, if there was
+one.
 }
 
 % The work can be "dedicated" to someone, typically family members or
@@ -454,11 +436,10 @@ partially supported by some particular grant, if there was one.
 % like to include their military service.  Otherwise, unless you have
 % overcome some particular adversity, it's probably better to leave out
 % personal information.
-\biosketch{
-Wabi-sabi Admirer was born admiring Wabi-sabi. Wabi-sabi Admirer has been tinkering
-with admiration of Wabi-sabi for a long time. Now it is time to be blessed by
-Wabi-sabi.
-}
+\biosketch{Wabi-sabi Admirer was born admiring Wabi-sabi. Wabi-sabi
+Admirer has been tinkering with admiration of Wabi-sabi for a long time.
+Now it is time to be blessed by Wabi-sabi.}
+
 \begin{document}
 \frontmatter
 
@@ -470,14 +451,14 @@ Wabi-sabi.
 % The (optional) list of symbols goes here
 
 \mainmatter
-\renewcommand*\contentsname{Table of contents}
-{
-\hypersetup{linkcolor=}
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
-
-\section{Introduction \{ch-intro\}}\label{introduction-ch-intro}
+%%%\renewcommand*\contentsname{Table of contents}
+%%%{
+%%\hypersetup{linkcolor=}
+%%\setcounter{tocdepth}{3}
+%\tableofcontents
+%}
+%%%%
+\section{Introduction}\label{sec-intro}
 
 \subsection{What is this?}\label{what-is-this}
 
@@ -492,11 +473,10 @@ would also work for students from other departments.
 \subsubsection{Where are the style class
 files?}\label{where-are-the-style-class-files}
 
-Please consult the guide from Graduate College\textasciitilde{}(Graduate
-College 2021) for resolving any style issues that are not addressed by
-the style class files that are provided along with this document. The
-files associated with this style can be found on the GitHub
-website\textasciitilde{}(Jain 2025).
+Please consult the guide from Graduate College (Graduate College 2021)
+for resolving any style issues that are not addressed by the style class
+files that are provided along with this document. The files associated
+with this style can be found on the GitHub website (Jain 2025).
 
 The file \texttt{bsu-cs.cls} contains the formatting directives for the
 \emph{bsu-cs} style. It is based on the standard LaTeX \texttt{report}
@@ -622,24 +602,22 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 
-\section{The Greatness of Wabi-sabi
-\{ch-wabisabiGreatness\}}\label{the-greatness-of-wabi-sabi-ch-wabisabigreatness}
+\section{The Greatness of Wabi-sabi}\label{sec-wabisabiGreatness}
 
 \subsection{Previous work}\label{previous-work}
 
 The greatness of Wabi-sabi The Great derives from her early work as
-documented in her books\textasciitilde{}Great (1952).
+documented in her books Great (1952).
 
 \subsection{What are their names?}\label{what-are-their-names}
 
-Please consult the articles by Admirer\textasciitilde{}(Admirer 1970)
-and Admirer, Smith and Doe\textasciitilde{}(Admirer, Smith, and Doe
-1972) for more details. Note that the references are cited by the last
-names of all authors for three authors or less. For more than three
-authors, ``et al'' can be used.
+Please consult the articles by Admirer (Admirer 1970) and Admirer, Smith
+and Doe (Admirer, Smith, and Doe 1972) for more details. Note that the
+references are cited by the last names of all authors for three authors
+or less. For more than three authors, ``et al'' can be used.
 
-Check the References on page\textasciitilde{}\pageref{refs} for an
-example of how to format the references.
+Check the References on page \pageref{refs} for an example of how to
+format the references.
 
 \subsection{The code of Wabi-sabi}\label{the-code-of-wabi-sabi}
 
@@ -647,7 +625,7 @@ Thesis and dissertation text is normally ``double spaced.'' It is
 customary to single-space literal code. Figure~\ref{fig-code} shows a
 sample Java program.
 
-\begin{figure}[t]
+\begin{figure}
 
 \centering{
 
@@ -766,102 +744,6 @@ Matrices}
 
 Here are two more examples of tables:
 
-\begin{longtable}[]{@{}
-  >{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0674}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0674}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.1910}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0787}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0899}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0899}}
-  >{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.0899}}@{}}
-\caption{Comparison of Slow MPI Version and the Fast MPI
-Version}\label{tbl-CSPV}\tabularnewline
-\toprule\noalign{}
-\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3258} + 4\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-Parameters
-\end{minipage}} &
-\multicolumn{7}{>{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.5843} + 12\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\centering
-\begin{verbatim}
-              Process Number
-\end{verbatim}
-\end{minipage}} \\
-\midrule\noalign{}
-\endfirsthead
-\toprule\noalign{}
-\multicolumn{3}{@{}>{\raggedright\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.3258} + 4\tabcolsep}}{%
-\begin{minipage}[b]{\linewidth}\raggedright
-Parameters
-\end{minipage}} &
-\multicolumn{7}{>{\centering\arraybackslash}p{(\columnwidth - 18\tabcolsep) * \real{0.5843} + 12\tabcolsep}@{}}{%
-\begin{minipage}[b]{\linewidth}\centering
-\begin{verbatim}
-              Process Number
-\end{verbatim}
-\end{minipage}} \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-N & M & & 1 & 5 & 10 & 15 & 20 & 25 & 30 \\
-\multirow{2}{=}{128} & \multirow{2}{=}{100} & Slow MPI(secs) & 2.11 &
-3.91 & 5.78 & 8.26 & 10.91 & 14.17 & 19.47 \\
-& & Fast MPI(secs) & 2.10 & 1.20 & 1.56 & 1.95 & 2.79 & 3.22 & 4.07 \\
-\end{longtable}
-
-\textbackslash begin\{table\}{[}ht{]}
-
-\caption{Comparison of Slow MPI Version and the Fast MPI Version}
-\label{tbl:CSPV}
-
-\textbackslash centerline\{
-
-\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
-N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
-128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
-    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
-\end{tabular}
-
-\} \textbackslash end\{table\}
-
-You can also use LaTeX tables.
-
-\begin{table}
-
-\caption{\label{tbl-SPWC}The Speedup of the MPI WRS Code and the HPF WRS
-Code}
-
-\centering{
-
-[h]
-\caption{The Speedup of the MPI WRS Code and the HPF WRS Code}
-
-\centerline{
-\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
-N &M & &1 &10 &20 &30 &40 &50 &60\\ \hline
-128 &600 &MPI(speedup) &1 &5.18 &7.67 &8.24 &6.99 &5.55 &4.49\\ \cline {3-10}
-    &    &HPF(speedup) &1 &8.40 &12.15 &13.98 &14.73 &13.52 &13.21\\ \hline
-256 &300 &MPI(speedup) &1 &6.70 &7.74 &6.47 &5.19 &3.72 &2.94\\ \cline {3-10}
-    &    &HPF(speedup) &0.99 &7.24 &9.65 &10.58 &10 &9.48 &8.73\\ \hline
-512 &150 &MPI(speedup) &1 &6.75 &10.64 &12.14 &13.35 &13.87 &13.98\\ \cline {3-10}
-    &    &HPF(speedup) &0.98 &6.72 &9.88 &11.55 &12.86 &13.38 &13.83\\ \hline
-1024 &75 &MPI(speedup) &1 &2.13 &2.30 &2.36 &2.38 &2.39 &2.40\\ \cline {3-10}
-    &    &HPF(speedup) &0.95 &1.94 &2.06 &2.10 &2.13 &2.13 &2.14\\ \hline
-\end{tabular}
-}
-
-}
-
-\end{table}%
-
 \section{Conclusions}\label{conclusions}
 
 \subsection{What have we done so far?}\label{what-have-we-done-so-far}
@@ -907,12 +789,12 @@ Project.''}
 
 \section{Timing Measurements}\label{app-Timing}
 
-Here is Appendix A. See Appendix\textasciitilde{}(\textbf{app-Setup?})
-for the experimental setup.
+Here is Appendix A. See Appendix (\textbf{app-Setup?}) for the
+experimental setup.
 
 \section{Experimental Setup}\label{app-Setup}
 
-Here is Appendix\textasciitilde{}(\textbf{app-Setup?}).
+Here is Appendix (\textbf{app-Setup?}).
 
 \finish
 

@@ -668,7 +668,7 @@
 \newcounter{figure}[chapter]
 \renewcommand \thefigure
      {\ifnum \c@chapter>\z@ \thechapter.\fi \@arabic\c@figure}
-\def\fps@figure{tp*}  %! try to keep figures at the top of the page
+\def\fps@figure{tp}  %! try to keep figures at the top of the page
 \def\ftype@figure{1}
 \def\ext@figure{lof}
 \def\fnum@figure{\figurename\nobreakspace\thefigure}
@@ -681,7 +681,7 @@
 \newcounter{table}[chapter]
 \renewcommand \thetable
      {\ifnum \c@chapter>\z@ \thechapter.\fi \@arabic\c@table}
-\def\fps@table{tp*}  %! try to keep tables at the top of the page
+\def\fps@table{tp}  %! try to keep tables at the top of the page
 \def\ftype@table{2}
 \def\ext@table{lot}
 \def\fnum@table{\tablename\nobreakspace\thetable}

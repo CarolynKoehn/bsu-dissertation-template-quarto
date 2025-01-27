@@ -17,4 +17,5 @@ contributes:
         - "partials/before-body.tex"
         - "partials/before-bib.tex"
         - "partials/title.tex"
+        - "partials/toc.tex"
 
