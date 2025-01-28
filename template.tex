@@ -29,7 +29,7 @@
 }{}
 \usepackage{xcolor}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -713,10 +713,9 @@ PNG) into a Quarto document.
 \section{Tables}\label{tables}
 
 Table~\ref{tbl-CSSSM} shows the formatting and labeling for a table. For
-complicated formats, you can create a grid table at
-https://www.tablesgenerator.com/text\_tables with
-\texttt{Use\ reStructuredText\ syntax} selected, or generate an HTML
-table (https://quarto.org/docs/authoring/tables.html).
+complicated formats, you can use raw \LaTeX~tables
+(https://www.overleaf.com/learn/latex/Tables) inside cross-reference div
+syntax (https://quarto.org/docs/authoring/cross-references-divs.html).
 
 \begin{table}
 
@@ -725,27 +724,75 @@ Matrices}
 
 \centering{
 
-+:-----------------------------------+:--------------:+:------------------------------------------:+:--------------------:+
-\textbar{} \textbar{} Sorted \(X+Y\) \textbar{} Matrix with sorted rows
-\textbar{} Matrix with sorted \textbar{}
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-\textbar{} \textbar{} \textbar{} and sorted columns \textbar{} columns
-\textbar{}
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-\textbar{} \textbar{} \(|X|=|Y|=n\) \textbar{} \(n \times m\),
-\(m \leq n\) \textbar{} \(n \times n\) \textbar{} \(n \times m\)
-\textbar{}
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-\textbar{} \(k = \Theta(mn)\) or \(\Theta(n^2)\) \textbar{}
-\(\Theta(n)\) \textbar{} \(\Theta(m\log (2n/m))\) \textbar{}
-\(\Theta(n)\) \textbar{} \(\Theta(m \log n)\) \textbar{}
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
+\begin{tabular}{|l|cccc|}
+\hline
+& Sorted $X+Y$ & \multicolumn{2}{c}{Matrix with sorted rows} & Matrix with sorted \\
+&  & \multicolumn{2}{c}{and sorted columns} & columns \\ \cline{2-5}
+& $|X|=|Y|=n$ &  $n \times m$, $m \leq n$ & $n \times n$ & $n \times m$ \\
+\hline
+$k = \Theta(mn)$ or $\Theta(n^2)$ & $\Theta(n)$ & $\Theta(m
+\log (2n/m))$ & $\Theta(n)$ & $\Theta(m \log n)$ \\
+\hline
+\end{tabular}
 
 }
 
 \end{table}%
 
-Here are two more examples of tables:
+Here are two more examples of tables using raw \LaTeX~code with no
+quarto processing (Table~\ref{tbl-CSPV} and Table~\ref{tbl-SPWC}).
+
+\begin{table}
+
+\caption{\label{tbl-CSPV}Comparison of Slow MPI Version and the Fast MPI Version}
+
+\centering{
+
+%[ht]
+
+
+\centerline{
+\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
+N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
+128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
+    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
+\end{tabular}
+}
+
+}
+
+\end{table}%
+
+\begin{table}
+
+\caption{\label{tbl-SPWC}The Speedup of the MPI WRS Code and the HPF WRS Code}
+
+\centering{
+
+%[h]
+
+
+\centerline{
+\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
+N &M & &1 &10 &20 &30 &40 &50 &60\\ \hline
+128 &600 &MPI(speedup) &1 &5.18 &7.67 &8.24 &6.99 &5.55 &4.49\\ \cline {3-10}
+    &    &HPF(speedup) &1 &8.40 &12.15 &13.98 &14.73 &13.52 &13.21\\ \hline
+256 &300 &MPI(speedup) &1 &6.70 &7.74 &6.47 &5.19 &3.72 &2.94\\ \cline {3-10}
+    &    &HPF(speedup) &0.99 &7.24 &9.65 &10.58 &10 &9.48 &8.73\\ \hline
+512 &150 &MPI(speedup) &1 &6.75 &10.64 &12.14 &13.35 &13.87 &13.98\\ \cline {3-10}
+    &    &HPF(speedup) &0.98 &6.72 &9.88 &11.55 &12.86 &13.38 &13.83\\ \hline
+1024 &75 &MPI(speedup) &1 &2.13 &2.30 &2.36 &2.38 &2.39 &2.40\\ \cline {3-10}
+    &    &HPF(speedup) &0.95 &1.94 &2.06 &2.10 &2.13 &2.13 &2.14\\ \hline
+\end{tabular}
+}
+
+}
+
+\end{table}%
 
 \chapter{Conclusions}
 
@@ -756,7 +803,11 @@ Here are two more examples of tables:
 The coming revolution in Wabi-sabi-lets offers many opportunities for
 further research.
 
-\chapter{References}
+\backmatter
+
+\bibliographystyle{plain}
+
+\chapter{REFERENCES}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
@@ -801,11 +852,7 @@ Here is Appendix (\textbf{app-Setup?}).
 
 \finish
 
-% The main text of the work ends here; the remaining text is back matter.
-\backmatter
 
-% There are different bibliography styles; 'plain' is used for theses.
-\bibliographystyle{plain}
 
 
 \end{document}

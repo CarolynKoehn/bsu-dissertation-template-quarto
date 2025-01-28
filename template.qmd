@@ -108,6 +108,7 @@ classoption: dissertation # other option is "project", remove for default (thesi
 
 # necessary formatting commands
 indent: true
+number-sections: true
 ---
 
 <!-- Note that judiciously placed comments can serve as landmarks, just as
@@ -295,50 +296,49 @@ Check @fig-fuzzyImage for what happens when Wabi-sabi gets compiled. This exampl
 
 # Tables
 
-@tbl-CSSSM shows the formatting and labeling for a table. For complicated formats, you can create a grid table at https://www.tablesgenerator.com/text_tables with `Use reStructuredText syntax` selected, or generate an HTML table (https://quarto.org/docs/authoring/tables.html).
+@tbl-CSSSM shows the formatting and labeling for a table. For complicated formats, you can use raw \LaTeX\ tables (https://www.overleaf.com/learn/latex/Tables) inside cross-reference div syntax (https://quarto.org/docs/authoring/cross-references-divs.html).
 
 ::: {#tbl-CSSSM}
 
-+:-----------------------------------+:--------------:+:------------------------------------------:+:--------------------:+
-|                                   | Sorted $X+Y$ |          Matrix with sorted rows         | Matrix with sorted |
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-|                                   |              |            and sorted columns            |       columns      |
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-|                                   |  $|X|=|Y|=n$ | $n \times m$, $m \leq n$  | $n \times n$ |    $n \times m$    |
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
-| $k = \Theta(mn)$ or $\Theta(n^2)$ |  $\Theta(n)$ |   $\Theta(m\log (2n/m))$  |  $\Theta(n)$ | $\Theta(m \log n)$ |
-+-----------------------------------+--------------+---------------------------+--------------+--------------------+
+\begin{tabular}{|l|cccc|}
+\hline
+& Sorted $X+Y$ & \multicolumn{2}{c}{Matrix with sorted rows} & Matrix with sorted \\
+&  & \multicolumn{2}{c}{and sorted columns} & columns \\ \cline{2-5}
+& $|X|=|Y|=n$ &  $n \times m$, $m \leq n$ & $n \times n$ & $n \times m$ \\
+\hline
+$k = \Theta(mn)$ or $\Theta(n^2)$ & $\Theta(n)$ & $\Theta(m
+\log (2n/m))$ & $\Theta(n)$ & $\Theta(m \log n)$ \\
+\hline
+\end{tabular}
 
 Complexity of Selection and Search in Sorted Matrices
 
 :::
 
-Here are two more examples of tables:
-
-<!-- ::: {#tbl-CSPV}
-
-+----------------------------+---------------------------------------------------+
-| Parameters                 |                   Process Number                  |
-+:====+:===:+:==============:+:====:+:====:+:====:+:====:+:=====:+:=====:+:=====:+
-| N   |  M  |                |   1  |   5  |  10  |  15  |   20  |   25  |   30  |
-+-----+-----+----------------+------+------+------+------+-------+-------+-------+
-| 128 | 100 | Slow MPI(secs) | 2.11 | 3.91 | 5.78 | 8.26 | 10.91 | 14.17 | 19.47 |
-|     |     +----------------+------+------+------+------+-------+-------+-------+
-|     |     | Fast MPI(secs) | 2.10 | 1.20 | 1.56 | 1.95 |  2.79 |  3.22 |  4.07 |
-+-----+-----+----------------+------+------+------+------+-------+-------+-------+
-
-Comparison of Slow MPI Version and the Fast MPI Version
-
-:::
-
-You can also use LaTeX tables. -->
-
-<!-- ::: {#tbl-SPWC}
+Here are two more examples of tables using raw \LaTeX\ code with no quarto processing (@tbl-CSPV and @tbl-SPWC).
+<!-- TODO: troubleshoot table placement with [ht] and [h]-->
 
 ```{=latex}
-\begin{table}[h]
+\begin{table}%[ht]
+\caption{Comparison of Slow MPI Version and the Fast MPI Version}
+\label{tbl-CSPV}
+\centerline{
+\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
+\hline
+\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
+N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
+128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
+    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
+\end{tabular}
+}
+\end{table}
+```
+
+
+```{=latex}
+\begin{table}%[h]
 \caption{The Speedup of the MPI WRS Code and the HPF WRS Code}
-\label{tbl:SPWC}
+\label{tbl-SPWC}
 \centerline{
 \begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
 \hline
@@ -357,10 +357,6 @@ N &M & &1 &10 &20 &30 &40 &50 &60\\ \hline
 \end{table}
 ```
 
-The Speedup of the MPI WRS Code and the HPF WRS Code
-
-::: -->
-
 <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Chapter: Conclusions
@@ -376,7 +372,13 @@ The Speedup of the MPI WRS Code and the HPF WRS Code
 The coming revolution in Wabi-sabi-lets offers many opportunities for further
 research.
 
-\chapter{References}
+<!-- The main text of the work ends here; the remaining text is back matter. -->
+\backmatter
+
+<!-- There are different bibliography styles; 'plain' is used for theses. -->
+\bibliographystyle{plain}
+
+\chapter{REFERENCES}
 
 ::: {#refs}
 :::
