@@ -270,7 +270,7 @@ Here is an itemized list of all the mysteries of Wabi-sabi.
 % and the caption is placed at the top.  Also there is a separate
 % list of tables in the front matter. -->
 
-Here is a simple table.
+Here is a simple pipe table (https://quarto.org/docs/authoring/tables.html).
 
 | Parallel library/language | WRS Code | OCS Code  | ICSAMD Code |
 |:-------------------------:|:--------:|:---------:|:-----------:|
