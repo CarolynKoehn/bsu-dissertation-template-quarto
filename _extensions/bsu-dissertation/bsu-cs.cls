@@ -724,9 +724,9 @@
     \else
       \@restonecolfalse
     \fi
-    \chapter*{\contentsname
-        \@mkboth{%
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \chapter*{TABLE OF CONTENTS}%
+      % \@mkboth{%
+      % \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
     \@starttoc{toc}%
     \if@restonecol\twocolumn\fi
     }
@@ -782,26 +782,26 @@
     \else
       \@restonecolfalse
     \fi
-    \chapter*{\listfigurename}%
+    \chapter*{LIST OF FIGURES}%
     %! include it in the table of contents
-    \addcontentsline{toc}{chapter}{\listfigurename}%
-      \@mkboth{\MakeUppercase\listfigurename}%
-              {\MakeUppercase\listfigurename}%
+    \addcontentsline{toc}{chapter}{LIST OF FIGURES}%
+      % \@mkboth{\MakeUppercase\listfigurename}%
+      %         {\MakeUppercase\listfigurename}%
     \@starttoc{lof}%
     }
 \newcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.3em}}
 \newcommand\listoftables{%
-  \chapter*{\listtablename}%
+  \chapter*{LIST OF TABLES}%
     \if@twocolumn
       \@restonecoltrue\onecolumn
     \else
       \@restonecolfalse
     \fi
     %! include it in the table of contents
-    \addcontentsline{toc}{chapter}{\listtablename}%
-      \@mkboth{%
-          \MakeUppercase\listtablename}%
-         {\MakeUppercase\listtablename}%
+    \addcontentsline{toc}{chapter}{LIST OF TABLES}%
+      % \@mkboth{%
+      %     \MakeUppercase\listtablename}%
+      %    {\MakeUppercase\listtablename}%
     \@starttoc{lot}%
     }
 \let\l@table\l@figure
@@ -858,9 +858,10 @@
     \parindent 1em%
     \noindent
     \hb@xt@1.8em{\hss\@makefnmark}#1}
-\newcommand\contentsname{TABLE OF CONTENTS}
-\newcommand\listfigurename{LIST OF FIGURES}
-\newcommand\listtablename{LIST OF TABLES}
+% I had to hard-code these uppercase titles into the \tableofcontents, \listoffigures, and \listoftables commands
+% \newcommand\contentsname{TABLE OF CONTENTS}
+% \newcommand\listfigurename{LIST OF FIGURES}
+% \newcommand\listtablename{LIST OF TABLES}
 \newcommand\bibname{REFERENCES}
 \newcommand\indexname{INDEX}
 \newcommand\figurename{Figure}
@@ -1208,6 +1209,7 @@
 %% but just in case, let's put them in macros
 %% (\abstractname, \listfigurename, \contentsname, \listtablename are
 %% are already defined.)
+%% 1/29/25: \listfigurename, \contentsname, \listtablename hard-coded in instead of defined
 
 \newcommand{\committeeapproval}{DEFENSE COMMITTEE AND FINAL READING APPROVALS}
 \newcommand{\proposalacceptance}{PROPOSAL ACCEPTANCE}
