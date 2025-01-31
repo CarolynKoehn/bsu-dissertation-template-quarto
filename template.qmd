@@ -1,6 +1,6 @@
 ---
-# "titleBreak" is a custom command that breaks the title on the first page but not on other pages
 title: "An Ode to Wabi-sabi:\\titleBreak Homage to a Great and Wonderful Person"
+# "titleBreak" is a custom command that breaks the title on the first page but not on other pages
 format:
   bsu-dissertation-pdf:
     keep-tex: true  
