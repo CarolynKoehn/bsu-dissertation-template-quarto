@@ -91,13 +91,13 @@ classoption: dissertation # other option is "project", remove for default (thesi
 
 # TO-DO: get these to work
 # Optional list of abbreviations
-# listAbbreviations:
-#   - abbrev: "LOL"
-#     full: "Laughing Out Loud"
-#   - abbrev: "OMG"
-#     full: "Oh My God!"
-#   - abbrev: "ROFL"
-#     full: "Rolling on the Floor Laughing"
+listAbbreviations:
+  - text: "LOL"
+    definition: "Laughing Out Loud"
+  - text: "OMG"
+    definition: "Oh My God!"
+  - text: "ROFL"
+    definition: "Rolling on the Floor Laughing"
     
 # Optional list of symbols
 # listSymbols:

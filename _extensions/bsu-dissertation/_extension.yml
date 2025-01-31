@@ -8,10 +8,12 @@ contributes:
       toc: true
       filters:
         - bsu-dissertation.lua
+        - list_of_abbrevs.lua
     pdf:
       include-in-header: header.tex
       format-resources:
         - bsu-cs.cls
+        - _list_of_abbrevs.tex
       template-partials:
         - "partials/doc-class.tex"
         - "partials/before-body.tex"
