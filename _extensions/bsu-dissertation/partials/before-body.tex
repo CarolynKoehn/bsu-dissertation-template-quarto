@@ -3,15 +3,11 @@
 \buildFrontPages
 
 % The (optional) list of abbreviations goes here
-% $if(listAbbreviations)$
-% \begin{listAbbreviations}
-% $for(by-listAbbreviations)$
-%   \item[$by-listAbbreviations.abbrev$] $by-listAbbreviations.full$
-% $endfor$
-% \end{listAbbreviations}
-% $endif$
+$if(listAbbreviations)$
 
 \input{_list_of_abbrevs.tex}
+
+$endif$
 
 
 % The (optional) list of symbols goes here
