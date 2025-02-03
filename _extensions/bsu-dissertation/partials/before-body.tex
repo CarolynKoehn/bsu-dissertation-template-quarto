@@ -12,11 +12,9 @@ $endif$
 
 % The (optional) list of symbols goes here
 $if(listSymbols)$
-\begin{listSymbols}
-$for(by-listSymbols)$
-  \item[$by-listSymbols.symb$] $by-listSymbols.full$
-$endfor$
-\end{listSymbols}
+
+\input{_list_of_symbols.tex}
+
 $endif$
 
 \mainmatter

@@ -100,11 +100,12 @@ listAbbreviations:
     definition: "Rolling on the Floor Laughing"
     
 # Optional list of symbols
-# listSymbols:
-#   - symb: "$\\sqrt{2}$"
-#     full: "square root of 2"
-#   - symb: "$\\lambda$"
-#     full: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
+# \\ is converted to \
+listSymbols:
+  - symbol: "$\\sqrt{2}$"
+    definition: "square root of 2"
+  - symbol: "$\\lambda$"
+    definition: "lambda symbol, normally used in lambda calculus but it sometimes gets used for wavelength as well"
 
 # necessary formatting commands
 indent: true

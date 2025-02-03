@@ -9,11 +9,13 @@ contributes:
       filters:
         - bsu-dissertation.lua
         - list_of_abbrevs.lua
+        - list_of_symbols.lua
     pdf:
       include-in-header: header.tex
       format-resources:
         - bsu-cs.cls
         - _list_of_abbrevs.tex
+        - _list_of_symbols.tex
       template-partials:
         - "partials/doc-class.tex"
         - "partials/before-body.tex"
