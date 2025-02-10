@@ -1,9 +1,7 @@
 ---
 title: "An Ode to Wabi-sabi:\\titleBreak Homage to a Great and Wonderful Person"
 # "titleBreak" is a custom command that breaks the title on the first page but not on other pages
-format:
-  bsu-dissertation-pdf:
-    keep-tex: true  
+
 # Author's name (must be exactly what name the Registrar has)
 # normally it is of the form "First Middle Last"
 author: "Wabi-sabi Admirer"
@@ -112,6 +110,11 @@ listSymbols:
 # necessary formatting commands
 indent: true
 number-sections: true
+format:
+  bsu-dissertation-pdf:
+    keep-tex: true  
+execute: 
+  echo: false
 ---
 
 <!-- Note that judiciously placed comments can serve as landmarks, just as
@@ -318,29 +321,40 @@ Complexity of Selection and Search in Sorted Matrices
 
 :::
 
-Here are two more examples of tables using raw \LaTeX\ code with no quarto processing (@tbl-CSPV and @tbl-SPWC).
-<!-- TODO: troubleshoot table placement with [ht] and [h]-->
+<!-- TODO: Create code example instead -->
+Here's an example of a table created with imported data files and code processing with packages `tidyverse` and `kableExtra` (@tbl-CSPV).
 
-```{=latex}
-\begin{table}%[ht]
-\caption{Comparison of Slow MPI Version and the Fast MPI Version}
-\label{tbl-CSPV}
-\centerline{
-\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
-N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
-128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
-    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
-\end{tabular}
-}
-\end{table}
+::: {#tbl-CSPV}
+
+```{r}
+#| message: false
+#| warning: false
+
+library(tidyverse, quietly = TRUE)
+library(kableExtra, quietly = TRUE)
+
+tbl_data <- read_csv("data/slow_fast_mpi.csv")
+
+tbl_data_clean <- tbl_data %>%
+  rename_with(., ~gsub(".*_", "", .x)) %>%
+  mutate(Speed = paste(Speed, "MPI(secs)"))
+
+kable(tbl_data_clean, 
+      digits=2, 
+      align='lccccccccc',
+      col.names = c(colnames(tbl_data_clean)[1:2], "", colnames(tbl_data_clean)[4:10])) %>%
+  add_header_above(c("Parameters" = 3, "Process Number" = 7)) %>%
+  collapse_rows()
 ```
 
-<!-- TODO: Create code example instead -->
+Comparison of Slow MPI Version and the Fast MPI Version
+
+:::
+
+Here's an example of a table using raw \LaTeX\ code with no Quarto processing (@tbl-SPWC).
 
 ```{=latex}
-\begin{table}%[h]
+\begin{table}
 \caption{The Speedup of the MPI WRS Code and the HPF WRS Code}
 \label{tbl-SPWC}
 \centerline{

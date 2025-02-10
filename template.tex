@@ -254,6 +254,25 @@
  	colorlinks=true,
  	allcolors=blue,
 }
+
+% Default placement of tables and figures is right after the text, then preferred at top of page
+\usepackage{float}
+\floatplacement{table}{ht}
+\floatplacement{figure}{ht}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -746,40 +765,37 @@ $k = \Theta(mn)$ or $\Theta(n^2)$ & $\Theta(n)$ & $\Theta(m
 
 \end{table}%
 
-Here are two more examples of tables using raw \LaTeX~code with no
-quarto processing (Table~\ref{tbl-CSPV} and Table~\ref{tbl-SPWC}).
+Here's an example of a table created with imported data files and code
+processing with packages \texttt{tidyverse} and \texttt{kableExtra}
+(Table~\ref{tbl-CSPV}).
 
-\begin{table}
+\begin{longtable}[t]{lccccccccc}
 
-\caption{\label{tbl-CSPV}Comparison of Slow MPI Version and the Fast MPI Version}
+\caption{\label{tbl-CSPV}Comparison of Slow MPI Version and the Fast MPI
+Version}
 
-\centering{
+\tabularnewline
 
-%[ht]
+\toprule
+\multicolumn{3}{c}{Parameters} & \multicolumn{7}{c}{Process Number} \\
+\cmidrule(l{3pt}r{3pt}){1-3} \cmidrule(l{3pt}r{3pt}){4-10}
+N & M &  & 1 & 5 & 10 & 15 & 20 & 25 & 30\\
+\midrule
+ &  & Slow MPI(secs) & 2.11 & 3.91 & 5.78 & 8.26 & 10.91 & 14.17 & 19.47\\
+\cmidrule{3-10}\nopagebreak
+\multirow{-2}{*}[0.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\raggedright\arraybackslash 128} & \multirow{-2}{*}[0.5\dimexpr\aboverulesep+\belowrulesep+\cmidrulewidth]{\centering\arraybackslash 100} & Fast MPI(secs) & 2.10 & 1.20 & 1.56 & 1.95 & 2.79 & 3.22 & 4.07\\
+\bottomrule
 
+\end{longtable}
 
-\centerline{
-\begin{tabular}{|lc|c|c|c|c|c|c|c|c|}
-\hline
-\multicolumn{3}{|c|}{Parameters}   & \multicolumn{7}{|c|}{Process Number}\\ \hline
-N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
-128 &100 &Slow MPI(secs) &2.11 &3.91 &5.78 &8.26 &10.91 &14.17 &19.47\\ \cline {3-10}
-    &    &Fast MPI(secs) &2.10 &1.20 &1.56 &1.95 &2.79 &3.22 &4.07\\ \hline
-\end{tabular}
-}
-
-}
-
-\end{table}%
+Here's an example of a table using raw \LaTeX~code with no Quarto
+processing (Table~\ref{tbl-SPWC}).
 
 \begin{table}
 
 \caption{\label{tbl-SPWC}The Speedup of the MPI WRS Code and the HPF WRS Code}
 
 \centering{
-
-%[h]
-
 
 \centerline{
 \begin{tabular}{|lc|c|c|c|c|c|c|c|c|}

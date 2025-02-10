@@ -1,0 +1,3 @@
+Parameter_N,Parameter_M,Speed,Process_1,Process_5,Process_10,Process_15,Process_20,Process_25,Process_30
+128,100,Slow,2.11,3.91,5.78,8.26,10.91,14.17,19.47
+128,100,Fast,2.1,1.2,1.56,1.95,2.79,3.22,4.07
