@@ -158,37 +158,21 @@ This is a template that allows you to typeset your dissertation (or thesis or pr
 % item label.  It can take multiple, comma-separated, arguments. -->
 
 Please consult the guide from Graduate College [@guide] for resolving any style issues
-that are not addressed by the style class files that are provided along with this document. The files associated with this style can be found on the GitHub website [@mainrepo].
+that are not addressed by the style class files that are provided along with this document. The files associated with this style can be found on the GitHub website [@mainrepo]. The style class files modified for Quarto can be found on GitHub as well [@quartorepo].
 
 <!-- % `text` changes to "typewriter" (monospaced) font, which is typically
 % used for literal code or filenames.
 % _text_ italicizes the text -->
 
-The file `bsu-cs.cls` contains the formatting directives for the _bsu-cs_ style. It is based on the standard LaTeX `report` style with 12 point font option.
+The file `bsu-cs.cls` contains the formatting directives for the _bsu-cs_ style. It is based on the standard \LaTeX\ `report` style with 12 point font option.
 
-**TO-DO:** Update this list relevant to Quarto
+1. To create a new article using this format: `quarto use template CarolynKoehn/bsu-dissertation`. This will create a new directory with an example document that uses this format.
+2. To add this format to an existing document: `quarto add CarolynKoehn/bsu-dissertation`. Then, add the format to your document options:
 
-1. Simply copy `bsu-cs.cls` to the directory containing your \LaTeX\ document. That way, LaTeX will find it, because it looks in current directory by default.
-2. Upload the `bsu-cs.cls` file along with this template (and associated files) to Overleaf to use web-based LaTeX.
-3. The current style class file may be installed in some directory available system wide.  (Ask your systems administrator if this is the case).  You will have to include that directory in the path LaTeX uses to search for input files.  Under Linux, this is controlled by the `TEXINPUTS` environment variable, which can be set in the `.bashrc` file in your home directory.
-For example
-
-`TEXINPUTS=.:/usr/local/texinputs/:/usr/share/texmf//`
-`export TEXINPUTS`
-
-adds `/usr/local/texinputs`, a possible location for `bsu-cs.cls`, although it will not take effect until you `source` the `.bashrc` file, or log in again.
-4. Install the style class files in a directory under your accounts and set the `TEXINPUTS`
-variable accordingly.
-
-<!-- % If you have blank lines before  or after the numbered list
-% it makes the code easier to read, but it also
-% starts a new paragraph.  You can always use empty comments for readablilty.
-%
-% Although, you can always use \noindent to prevent paragraph indentation. -->
-
-The first or second way is recommended, because they involve making a local copy of the style
-file. This assures your document format will not be affected affected by subsequent updates
-to `bsu-cs.cls` (but gives you the option to copy the updated file if you want).
+```default
+format:
+  bsu-dissertation-pdf: default
+```
 
 # Get ready for Wabi-sabi {#sec-getReady}
 
@@ -219,7 +203,7 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff st
 The greatness of Wabi-sabi The Great derives from her early work as documented in her books [@wsbook1; @wsbook2].
 
 # What are their names?
-Please consult the articles by Admirer [@mepaper1] and Admirer, Smith and Doe [@mepaper2] for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used.
+Please consult the articles @mepaper1 and @mepaper2 for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used. This is based on the `csl` file you add to your project folder.
 
 <!-- %! The \pageref{<tag>} command references the page number of a label. -->
 Check the References on page \pageref{refs} for an example of how to format the references.
@@ -261,6 +245,12 @@ public static BigInteger power(BigInteger x, int n)
 Repeated Squaring Power Method. This figure also serves as an example of the inclusion of literal code.
 
 :::
+
+When you want to show an algorithm or equation, use the \LaTeX\ math environment denoted by `$$` (@eq-example).
+
+$$
+P(E) = {n \choose k} p^k (2-p)^{n - k}
+$$ {#eq-example}
 
 
 # Other mysteries of Wabi-sabi
@@ -322,13 +312,13 @@ Complexity of Selection and Search in Sorted Matrices
 :::
 
 <!-- TODO: Create code example instead -->
-Here's an example of a table created with imported data files and code processing with packages `tidyverse` and `kableExtra` (@tbl-CSPV).
-
-::: {#tbl-CSPV}
+Here's an example of a table created with imported data files and code processing with packages `tidyverse` and `kableExtra` in a code chunk (@tbl-CSPV).
 
 ```{r}
 #| message: false
 #| warning: false
+#| tbl-cap: "Comparison of Slow MPI Version and the Fast MPI Version"
+#| label: tbl-CSPV
 
 library(tidyverse, quietly = TRUE)
 library(kableExtra, quietly = TRUE)
@@ -347,9 +337,6 @@ kable(tbl_data_clean,
   collapse_rows()
 ```
 
-Comparison of Slow MPI Version and the Fast MPI Version
-
-:::
 
 Here's an example of a table using raw \LaTeX\ code with no Quarto processing (@tbl-SPWC).
 

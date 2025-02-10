@@ -496,46 +496,34 @@ files?}\label{where-are-the-style-class-files}
 Please consult the guide from Graduate College (Graduate College, 2021)
 for resolving any style issues that are not addressed by the style class
 files that are provided along with this document. The files associated
-with this style can be found on the GitHub website (Jain, 2025).
+with this style can be found on the GitHub website (Jain, 2025). The
+style class files modified for Quarto can be found on GitHub as well
+(Koehn, 2025).
 
 The file \texttt{bsu-cs.cls} contains the formatting directives for the
-\emph{bsu-cs} style. It is based on the standard LaTeX \texttt{report}
+\emph{bsu-cs} style. It is based on the standard \LaTeX~\texttt{report}
 style with 12 point font option.
-
-\textbf{TO-DO:} Update this list relevant to Quarto
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Simply copy \texttt{bsu-cs.cls} to the directory containing your
-  \LaTeX~document. That way, LaTeX will find it, because it looks in
-  current directory by default.
+  To create a new article using this format:
+  \texttt{quarto\ use\ template\ CarolynKoehn/bsu-dissertation}. This
+  will create a new directory with an example document that uses this
+  format.
 \item
-  Upload the \texttt{bsu-cs.cls} file along with this template (and
-  associated files) to Overleaf to use web-based LaTeX.
-\item
-  The current style class file may be installed in some directory
-  available system wide. (Ask your systems administrator if this is the
-  case). You will have to include that directory in the path LaTeX uses
-  to search for input files. Under Linux, this is controlled by the
-  \texttt{TEXINPUTS} environment variable, which can be set in the
-  \texttt{.bashrc} file in your home directory. For example
+  To add this format to an existing document:
+  \texttt{quarto\ add\ CarolynKoehn/bsu-dissertation}. Then, add the
+  format to your document options:
 \end{enumerate}
 
-\texttt{TEXINPUTS=.:/usr/local/texinputs/:/usr/share/texmf//}
-\texttt{export\ TEXINPUTS}
-
-adds \texttt{/usr/local/texinputs}, a possible location for
-\texttt{bsu-cs.cls}, although it will not take effect until you
-\texttt{source} the \texttt{.bashrc} file, or log in again. 4. Install
-the style class files in a directory under your accounts and set the
-\texttt{TEXINPUTS} variable accordingly.
-
-The first or second way is recommended, because they involve making a
-local copy of the style file. This assures your document format will not
-be affected affected by subsequent updates to \texttt{bsu-cs.cls} (but
-gives you the option to copy the updated file if you want).
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{format:}
+\NormalTok{  bsu{-}dissertation{-}pdf: default}
+\end{Highlighting}
+\end{Shaded}
 
 \section{Get ready for Wabi-sabi}\label{sec-getReady}
 
@@ -630,10 +618,11 @@ documented in her books (Great, 1922, 1952).
 
 \section{What are their names?}\label{what-are-their-names}
 
-Please consult the articles by Admirer (Admirer, 1970) and Admirer,
-Smith and Doe (Admirer, Smith, \& Doe, 1972) for more details. Note that
-the references are cited by the last names of all authors for three
-authors or less. For more than three authors, ``et al'' can be used.
+Please consult the articles Admirer (1970) and Admirer, Smith, \& Doe
+(1972) for more details. Note that the references are cited by the last
+names of all authors for three authors or less. For more than three
+authors, ``et al'' can be used. This is based on the \texttt{csl} file
+you add to your project folder.
 
 Check the References on page \pageref{refs} for an example of how to
 format the references.
@@ -678,6 +667,13 @@ Squaring Power Method. This figure also serves as an example of the
 inclusion of literal code.}
 
 \end{figure}%
+
+When you want to show an algorithm or equation, use the \LaTeX~math
+environment denoted by \texttt{\$\$} (Equation~\ref{eq-example}).
+
+\begin{equation}\phantomsection\label{eq-example}{
+P(E) = {n \choose k} p^k (2-p)^{n - k}
+}\end{equation}
 
 \section{Other mysteries of
 Wabi-sabi}\label{other-mysteries-of-wabi-sabi}
@@ -766,8 +762,8 @@ $k = \Theta(mn)$ or $\Theta(n^2)$ & $\Theta(n)$ & $\Theta(m
 \end{table}%
 
 Here's an example of a table created with imported data files and code
-processing with packages \texttt{tidyverse} and \texttt{kableExtra}
-(Table~\ref{tbl-CSPV}).
+processing with packages \texttt{tidyverse} and \texttt{kableExtra} in a
+code chunk (Table~\ref{tbl-CSPV}).
 
 \begin{longtable}[t]{lccccccccc}
 
@@ -860,6 +856,11 @@ Wabi-sabiland: NoWabi-sabi Press.
 Jain, A. (2025). \emph{Style files for PhD {D}issertation or {M.S.}
 Thesis or {P}roject}. Retrieved from
 \url{https://github.com/BoiseState/thesis-dissertation-template}
+
+\bibitem[\citeproctext]{ref-quartorepo}
+Koehn, C. (2025). \emph{{BSU} {D}issertation {Q}uarto {T}emplate}.
+Retrieved from
+\url{https://github.com/CarolynKoehn/bsu-dissertation-template-quarto}
 
 \end{CSLReferences}
 
