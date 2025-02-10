@@ -30,14 +30,15 @@ format:
 
 ## Options
 
-*TODO*: If your format has options that can be set via document metadata, describe them.
+You will specify a number of options for the front matter of your dissertation in the YAML header of your `.qmd` file. These options are described in the YAML header of `template.qmd`.
+
+This template is designed for `classoption: dissertation`. It can also take the option `project`, or `classoption` can be removed from the YAML header for a thesis. These are not formally supported because they have not been tested.
 
 ## Example
 
 Here is the source code for a minimal sample document: [template.qmd](template.qmd).
 
-<!-- pdftools::pdf_convert('template.pdf',pages = 1) 
-![[template.qmd](template.qmd)](template_1.png) -->
+![[template.qmd](template.qmd)](template_1.png)
 
 ## License
 This modifies the Boise State Computer Science Department Thesis and Dissertation Template, available at https://github.com/BoiseState/thesis-dissertation-template.
@@ -65,5 +66,5 @@ SOFTWARE.
 
 ## References
 
-T. Kenny, Christopher. 2023. “Creating Quarto Journal Article Templates.” July 1, 2023. https://christopherkenny/posts/2023-07-01-creating-quarto-journal-articles.
+T. Kenny, Christopher. 2023. “Creating Quarto Journal Article Templates.” July 1, 2023. https://christophertkenny.com/posts/2023-07-01-creating-quarto-journal-articles/.
 

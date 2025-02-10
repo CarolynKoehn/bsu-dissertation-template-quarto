@@ -1,6 +1,6 @@
 ---
 title: "An Ode to Wabi-sabi:\\titleBreak Homage to a Great and Wonderful Person"
-# "titleBreak" is a custom command that breaks the title on the first page but not on other pages
+# "\\titleBreak" is a custom command that breaks the title on the first page but not on other pages
 
 # Author's name (must be exactly what name the Registrar has)
 # normally it is of the form "First Middle Last"
@@ -169,7 +169,7 @@ The file `bsu-cs.cls` contains the formatting directives for the _bsu-cs_ style.
 1. To create a new article using this format: `quarto use template CarolynKoehn/bsu-dissertation`. This will create a new directory with an example document that uses this format.
 2. To add this format to an existing document: `quarto add CarolynKoehn/bsu-dissertation`. Then, add the format to your document options:
 
-```default
+```yaml
 format:
   bsu-dissertation-pdf: default
 ```
