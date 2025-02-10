@@ -85,6 +85,8 @@ includeCopyright: true
 # list of symbols or list of abbreviations, like this template has).
 maxPage: 199
 bibliography: bibliography.bib
+# Download a csl citation style file appropriate for your discipline and put it in your project folder. Over 8,000 options are available on the CSL Project's GitHub: https://github.com/citation-style-language/styles
+csl: apa-6th-edition.csl
 
 ## Document class options - used in doc-class.tex
 classoption: dissertation # other option is "project", remove for default (thesis)
@@ -211,7 +213,7 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff st
 \chapter{The Greatness of Wabi-sabi} \label{ch-wabisabiGreatness}
 
 # Previous work
-The greatness of Wabi-sabi The Great derives from her early work as documented in her books [@wsbook1, @wsbook2].
+The greatness of Wabi-sabi The Great derives from her early work as documented in her books [@wsbook1; @wsbook2].
 
 # What are their names?
 Please consult the articles by Admirer [@mepaper1] and Admirer, Smith and Doe [@mepaper2] for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used.
@@ -335,6 +337,7 @@ N &M & &1 &5 &10 &15 &20 &25 &30\\ \hline
 \end{table}
 ```
 
+<!-- TODO: Create code example instead -->
 
 ```{=latex}
 \begin{table}%[h]
@@ -379,7 +382,10 @@ research.
 <!-- There are different bibliography styles; 'plain' is used for theses. -->
 \bibliographystyle{plain}
 
-\chapter{REFERENCES}
+<!-- \chapter*{} removes a chapter number from the references
+It also removes the References from the table of contents, so we add it back in -->
+\chapter*{REFERENCES}
+\addcontentsline{toc}{chapter}{REFERENCES}
 
 ::: {#refs}
 :::
@@ -394,15 +400,16 @@ research.
 
 \appendix
 
-<!-- % After \appendix has executed, the # command creates an appendix.
-% Appendices are numbered by "A", "B", etc. -->
+<!-- % After \appendix has executed, the \chapter command creates an appendix.
+ Appendices are numbered by "A", "B", etc. -->
 
-# Timing Measurements {#app-Timing}
+\chapter{Timing Measurements} \label{app-Timing}
 
-Here is Appendix A. See Appendix @app-Setup for the experimental setup.
+<!-- Chapter references created with LaTeX commands need to be referenced with a LaTeX command \ref{} -->
+Here is Appendix A. See Appendix \ref{app-Setup} for the experimental setup.
 
-# Experimental Setup {#app-Setup}
+\chapter{Experimental Setup} \label{app-Setup}
 
-Here is Appendix @app-Setup.
+Here is Appendix \ref{app-Setup}.
 
 \finish

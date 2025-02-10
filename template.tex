@@ -154,7 +154,7 @@
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 % Uncomment the following to produce a twoside document, suitable for printing.
-%\usepackage[inner=1.5in,outer=1in,letterpaper,twoside]{geometry}
+\usepackage[inner=1.5in,outer=1in,letterpaper,twoside]{geometry}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages
@@ -474,10 +474,10 @@ would also work for students from other departments.
 \subsection{Where are the style class
 files?}\label{where-are-the-style-class-files}
 
-Please consult the guide from Graduate College (Graduate College 2021)
+Please consult the guide from Graduate College (Graduate College, 2021)
 for resolving any style issues that are not addressed by the style class
 files that are provided along with this document. The files associated
-with this style can be found on the GitHub website (Jain 2025).
+with this style can be found on the GitHub website (Jain, 2025).
 
 The file \texttt{bsu-cs.cls} contains the formatting directives for the
 \emph{bsu-cs} style. It is based on the standard LaTeX \texttt{report}
@@ -607,14 +607,14 @@ stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff stuff
 \section{Previous work}\label{previous-work}
 
 The greatness of Wabi-sabi The Great derives from her early work as
-documented in her books Great (1952).
+documented in her books (Great, 1922, 1952).
 
 \section{What are their names?}\label{what-are-their-names}
 
-Please consult the articles by Admirer (Admirer 1970) and Admirer, Smith
-and Doe (Admirer, Smith, and Doe 1972) for more details. Note that the
-references are cited by the last names of all authors for three authors
-or less. For more than three authors, ``et al'' can be used.
+Please consult the articles by Admirer (Admirer, 1970) and Admirer,
+Smith and Doe (Admirer, Smith, \& Doe, 1972) for more details. Note that
+the references are cited by the last names of all authors for three
+authors or less. For more than three authors, ``et al'' can be used.
 
 Check the References on page \pageref{refs} for an example of how to
 format the references.
@@ -814,48 +814,49 @@ further research.
 
 \bibliographystyle{plain}
 
-\chapter{REFERENCES}
+\chapter*{REFERENCES}
+\addcontentsline{toc}{chapter}{REFERENCES}
 
 \phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
 \bibitem[\citeproctext]{ref-mepaper1}
-Admirer, Wabi-sabi. 1970. {``An Analysis of Wabi-Sabiism.''}
-\emph{Journal of the Advanced Computing Wabi-Sabi} 21 (2): 272--87.
+Admirer, W. (1970). An {A}nalysis of {W}abi-sabiism. \emph{Journal of
+the Advanced Computing Wabi-Sabi}, \emph{21}(2), 272--287.
 
 \bibitem[\citeproctext]{ref-mepaper2}
-Admirer, Wabi-sabi, Jim Smith, and Jane Doe. 1972. {``Everyday
-Wabi-Sabiism.''} \emph{Journal of the Advanced Wabi-Sabi Computing} 23
-(4): 272--87.
+Admirer, W., Smith, J., \& Doe, J. (1972). Everyday {W}abi-sabiism.
+\emph{Journal of the Advanced Wabi-Sabi Computing}, \emph{23}(4),
+272--287.
 
 \bibitem[\citeproctext]{ref-guide}
-Graduate College. 2021. {``Standards for Preparation of Dissertations,
-Theses \& Projects.''}
+Graduate College. (2021). \emph{Standards for {P}reparation of
+{D}issertations, {T}heses \& {P}rojects}.
 
 \bibitem[\citeproctext]{ref-wsbook1}
-Great, Wabi-sabi The. 1922. \emph{The World According to Wabi-Sabi}.
+Great, W. T. (1922). \emph{The {W}orld {A}ccording to {W}abi-sabi}.
 Wabi-sabiland: NoWabi-sabi Press.
 
 \bibitem[\citeproctext]{ref-wsbook2}
----------. 1952. \emph{The World Without Wabi-Sabi}. Wabi-sabiland:
-NoWabi-sabi Press.
+Great, W. T. (1952). \emph{The {W}orld {W}ithout {W}abi-sabi}.
+Wabi-sabiland: NoWabi-sabi Press.
 
 \bibitem[\citeproctext]{ref-mainrepo}
-Jain, Amit. 2025. {``Style Files for PhD Dissertation or m.s. Thesis or
-Project.''}
-\url{https://github.com/BoiseState/thesis-dissertation-template}.
+Jain, A. (2025). \emph{Style files for PhD {D}issertation or {M.S.}
+Thesis or {P}roject}. Retrieved from
+\url{https://github.com/BoiseState/thesis-dissertation-template}
 
 \end{CSLReferences}
 
 \appendix
 
-\section{Timing Measurements}\label{app-Timing}
+\chapter{Timing Measurements} \label{app-Timing}
 
-Here is Appendix A. See Appendix (\textbf{app-Setup?}) for the
-experimental setup.
+Here is Appendix A. See Appendix \ref{app-Setup} for the experimental
+setup.
 
-\section{Experimental Setup}\label{app-Setup}
+\chapter{Experimental Setup} \label{app-Setup}
 
-Here is Appendix (\textbf{app-Setup?}).
+Here is Appendix \ref{app-Setup}.
 
 \finish
 

@@ -1541,6 +1541,7 @@
 \def\@makededication{%
   % \newpage
   \chapter*{\dedicationame}
+  \addcontentsline{toc}{chapter}{\dedicationame}%
   \hspace*{\parindent}\@dedication
 %  \mbox{}\vfill\centerline{\@dedication}\vfill
 }
@@ -1556,6 +1557,7 @@
 
 \def\@makeacknowledgments{\newpage
   \chapter*{\acknowledgmentsname}
+  \addcontentsline{toc}{chapter}{\acknowledgmentsname}%
   \hspace*{\parindent}\@acknowledgments
 }
 
