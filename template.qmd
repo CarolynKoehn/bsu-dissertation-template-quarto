@@ -130,39 +130,43 @@ execute:
 
 \chapter{Introduction} \label{ch-intro}
 
-<!-- % The {<tag>} command allows the chapter to be referenced elsewhere
-% in the text by the <tag>: '@sec-intro' gets formatted as
-% "Chapter 1" or whatever number this chapter gets assigned.  It usually
-% requires a second 'latex' execution to get the labels right.  (The labels
-% are stored in the ".aux" file, and that gets updated each time latex runs.) I am not sure about the behavior in Quarto yet.
-%   Writers who use Quarto a lot are often in the habit of adding labels to
-% chapter, figure, and table, then adding other labels to things like sections
-% and subsections as they are needed.  Label tags follow no specific format,
-% but it's typical to include a hyphen-terminated prefix to indicate what
-% is being labeled, e.g. 'fig-' and 'tbl-' are required, see the Quarto crossrefs webpage for more info
-%
-%   sec-<name> for sections
-%   tbl-<name> for tables
-%   fig-<name> for figures
-%
-% WARNING: Do not use numbers or special characters such as '_', '$', etc.
-%          in label tags (although '-' is okay). -->
+<!-- The @ command allows the chapter to be referenced elsewhere
+in the text by the <tag>: '@sec-getReady' gets formatted as
+"Section 1.2" or whatever number this chapter gets assigned.  It usually
+requires a second Render to get the labels right.  (The labels
+are stored in the ".aux" file, and that gets updated each time latex runs.)
+  Writers who use Quarto a lot are often in the habit of adding labels to
+chapter, figure, and table, then adding other labels to things like sections
+and subsections as they are needed.  Label tags follow no specific format,
+but it's typical to include a hyphen-terminated prefix to indicate what
+is being labeled, e.g. 'fig-' and 'tbl-' are required, see the Quarto crossrefs webpage for more info
 
-<!-- Quarto headings start after the chapter heading -->
+  sec-<name> for sections
+  tbl-<name> for tables
+  fig-<name> for figures
+
+WARNING: Do not use numbers or special characters such as '_', '$', etc.
+         in label tags (although '-' is okay). 
+
+Because chapters are handled via LaTeX commands in this template,
+the @ cross-ref will not work. Use the LaTeX command \ref{<tag>} instead. -->
+
+<!-- Quarto headings using # start after the chapter heading -->
+
 # What is this?
 This is a template that allows you to typeset your dissertation (or thesis or project report) in the format approved by the Boise State Graduate College. It greatly reduces your typesetting work and helps you produce an aesthetically pleasing and consistent document. The template depends on a style class, titled `bsu-cs.cls` that was specifically designed for Boise State Computer Science students but would also work for students from other departments.
 
 ## Where are the style class files?
 
-<!-- % [@<tag>] is bibilography citation; <tag> must match a bibliography
-% item label.  It can take multiple, comma-separated, arguments. -->
+<!-- [@<tag>] is bibilography citation; <tag> must match a bibliography
+item label.  It can take multiple, semicolon-separated, arguments. -->
 
 Please consult the guide from Graduate College [@guide] for resolving any style issues
 that are not addressed by the style class files that are provided along with this document. The files associated with this style can be found on the GitHub website [@mainrepo]. The style class files modified for Quarto can be found on GitHub as well [@quartorepo].
 
-<!-- % `text` changes to "typewriter" (monospaced) font, which is typically
-% used for literal code or filenames.
-% _text_ italicizes the text -->
+<!-- `text` changes to "typewriter" (monospaced) font, which is typically
+used for literal code or filenames.
+_text_ italicizes the text -->
 
 The file `bsu-cs.cls` contains the formatting directives for the _bsu-cs_ style. It is based on the standard \LaTeX\ `report` style with 12 point font option.
 
@@ -176,7 +180,7 @@ format:
 
 # Get ready for Wabi-sabi {#sec-getReady}
 
-<!-- % The [^1] command creates a footnote -->
+<!-- The [^1] command creates a footnote -->
 So who is Wabi-sabi? We need a lot of text in here to see what happens when we hit the bottom of
 a page with text and try out things like footnotes [^1]. So here is some extra stuff: [^2]
 
@@ -205,16 +209,12 @@ The greatness of Wabi-sabi The Great derives from her early work as documented i
 # What are their names?
 Please consult the articles @mepaper1 and @mepaper2 for more details. Note that the references are cited by the last names of all authors for three authors or less. For more than three authors, "et al" can be used. This is based on the `csl` file you add to your project folder.
 
-<!-- %! The \pageref{<tag>} command references the page number of a label. -->
+<!-- The \pageref{<tag>} command references the page number of a label. You may need to render twice to get the correct page number. -->
 Check the References on page \pageref{refs} for an example of how to format the references.
 
 # The code of Wabi-sabi
 
-<!-- % **text** sets text in bold face.  It is useful in headings, but
-% is rarely used in running text.  It is used here to denote literal
-% LaTeX commands, and to illustrate its use. 
-When showing a program fragment, use the `text` environment. However, when you want
-to show an algorithm, use the $text$ environment. -->
+<!-- When showing a program fragment, use the `text` environment. However, if you want to show a loto of code, you can use the ```default``` environment in a figure environment -->
 
 Thesis and dissertation text is normally "double spaced."  It is customary to single-space
 literal code.  @fig-code shows a sample Java program.
@@ -262,11 +262,11 @@ Here is an itemized list of all the mysteries of Wabi-sabi.
 - Mystery 3.
 - Mystery 4.
 
-<!-- % Tables are like figures, except that they are numbered separately
-% and the caption is placed at the top.  Also there is a separate
-% list of tables in the front matter. -->
+<!-- Tables are like figures, except that they are numbered separately
+and the caption is placed at the top.  Also there is a separate
+list of tables in the front matter. -->
 
-Here is a simple pipe table (https://quarto.org/docs/authoring/tables.html).
+@tbl-table4 is a simple pipe table (https://quarto.org/docs/authoring/tables.html).
 
 | Parallel library/language | WRS Code | OCS Code  | ICSAMD Code |
 |:-------------------------:|:--------:|:---------:|:-----------:|
@@ -311,7 +311,6 @@ Complexity of Selection and Search in Sorted Matrices
 
 :::
 
-<!-- TODO: Create code example instead -->
 Here's an example of a table created with imported data files and code processing with packages `tidyverse` and `kableExtra` in a code chunk (@tbl-CSPV).
 
 ```{r}
@@ -380,11 +379,8 @@ research.
 <!-- The main text of the work ends here; the remaining text is back matter. -->
 \backmatter
 
-<!-- There are different bibliography styles; 'plain' is used for theses. -->
-\bibliographystyle{plain}
-
 <!-- \chapter*{} removes a chapter number from the references
-It also removes the References from the table of contents, so we add it back in -->
+It also removes the References from the table of contents, so we add it back in with \addcontentsline -->
 \chapter*{REFERENCES}
 \addcontentsline{toc}{chapter}{REFERENCES}
 
